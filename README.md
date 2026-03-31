@@ -71,3 +71,8 @@ git clone https://github.com/Prabhav1437/gridsense.git
 3. Run `index.html` in your browser
 
 ---
+
+## Folder Structure
+
+- `src/` - Source code
+  - `api/` - API setup code
