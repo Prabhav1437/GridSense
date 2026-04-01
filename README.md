@@ -74,5 +74,6 @@ git clone https://github.com/Prabhav1437/gridsense.git
 
 ## Folder Structure
 
-- `src/` - Source code
-  - `api/` - API setup code
+-api.js - all the api fetching (just basic only one season constructor will build a full proper version afterwords"
+-index.html - html basic boilerplate
+-index.css - basic css for the early version
