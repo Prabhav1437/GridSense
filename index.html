@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GridSense | F1 Analytics Dashboard</title>
+    <meta name="description"
+        content="A premium Formula 1 analytics dashboard providing deep insights into driver and constructor performance.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Outfit:wght@400;600;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body class="bg-black">
+    <div class="flex h-screen relative overflow-hidden">
+        <video autoplay muted loop playsinline class="absolute inset-0 h-full w-full object-cover z-0 opacity-50">
+            <source src="public/home.mp4" type="video/mp4">
+        </video>
+        <div
+            class="w-[320px] bg-white/5 flex flex-col p-10 z-50 backdrop-blur-2xl border-r border-white/10 shadow-2xl relative">
+            <div class="flex items-center gap-4 mb-14">
+                <div
+                    class="bg-red-500 w-12 h-12 flex items-center justify-center rounded-2xl text-xl font-bold font-outfit text-white shadow-2xl shadow-red-500/40">
+                    GS</div>
+                <h1 class="font-outfit text-2xl font-extrabold tracking-tighter text-white">Grid<span
+                        class="text-red-500">Sense</span></h1>
+            </div>
+
+            <nav class="flex flex-col gap-2 grow">
+                <button class="nav-item active" data-view="dashboard">
+                    <span><i class="fa-solid fa-gauge-high"></i></span> Dashboard
+                </button>
+                <button class="nav-item" data-view="standings">
+                    <span><i class="fa-solid fa-trophy"></i></span> Standings
+                </button>
+                <button class="nav-item" data-view="drivers">
+                    <span><i class="fa-solid fa-id-card"></i></span> Drivers
+                </button>
+                <button class="nav-item" data-view="constructors">
+                    <span><i class="fa-solid fa-arrows-down-to-people"></i></span> Constructors
+                </button>
+                <button class="nav-item" data-view="schedule">
+                    <span><i class="fa-solid fa-calendar-days"></i></span> Schedule
+                </button>
+            </nav>
+
+            <div class="pt-8 border-t border-white/10">
+                <p class="text-[10px] text-white/40 font-bold uppercase tracking-[0.2em]">Made by Prabhav Jain</p>
+            </div>
+        </div>
+        <main class="grow flex flex-col h-screen overflow-hidden z-10 relative">
+            <header
+                class="h-24 flex items-center justify-between px-14 border-b border-white/10 bg-white/5 backdrop-blur-xl z-40">
+                <div class="relative test w-[450px]">
+                    <span class="absolute left-6 top-1/2 -translate-y-1/2 text-white/40 text-lg"><i
+                            class="fa-solid fa-magnifying-glass"></i></span>
+                    <input type="text" id="global-search"
+                        class="w-full bg-white/5 border border-white/10 py-4 pl-14 pr-8 rounded-2xl text-sm font-semibold text-white outline-none focus:ring-2 focus:ring-red-500/30 focus:bg-white/10 transition-all placeholder:text-white/30"
+                        placeholder="Search driver, track or team...">
+                </div>
+                <div>
+                    <select id="season-select"
+                        class="bg-red-500 text-white py-3 px-2 rounded-2xl text-xs font-black font-outfit tracking-widest outline-none cursor-pointer shadow-xl shadow-red-500/20 hover:brightness-110 transition-all text-center">
+                    </select>
+                </div>
+            </header>
+
+            <div id="content-area" class="p-14 overflow-y-auto grow custom-scrollbar">
+                <div class="flex flex-col items-center justify-center h-full gap-6 text-white/40">
+                    <div class="w-14 h-14 border-4 border-white/5 border-t-red-500 rounded-full animate-spin"></div>
+                    <p class="font-bold tracking-tight text-white/40 uppercase tracking-widest">Warming up engines...
+                    </p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <div id="driver-modal"
+        class="fixed inset-0 bg-black/60 backdrop-blur-md flex items-center justify-center z-[1000] hidden p-6">
+        <div
+            class="bg-white/10 border border-white/20 backdrop-blur-3xl w-full max-w-2xl max-h-full overflow-y-auto rounded-[40px] p-12 relative shadow-2xl">
+            <button
+                class="close-modal absolute top-8 right-8 text-3xl font-light text-white/30 hover:text-red-500 transition-all cursor-pointer">&times;</button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+    <script src="src/api/base.js"></script>
+    <script src="src/api/index.js"></script>
+    <script src="src/ui/dashboard.js"></script>
+    <script src="src/ui/drivers.js"></script>
+    <script src="src/ui/standings.js"></script>
+    <script src="src/ui/races.js"></script>
+    <script src="src/ui/modal.js"></script>
+    <script src="src/main.js"></script>
+</body>
+
+</html>
