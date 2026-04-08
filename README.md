@@ -1,78 +1,37 @@
 # GridSense
 
-## Overview
+GridSense is a Formula 1 analytics dashboard that provides data on driver and constructor performance across different seasons.
 
-GridSense is a dashboard that analyzes Formula 1 race data and provides insights into driver performance across a season.
+## Features
 
-Instead of just displaying race results, the project focuses on **understanding patterns** such as per race performance analysis and across seasons performance of constructors and drivers.
+### Dashboard Overview
+The main dashboard provides a summary of the latest race results and the current season standings at a glance.
 
----
+### Driver and Constructor Standings
+Detailed rankings for both drivers and constructors for any selected season. View points, positions, and team affiliations.
 
-## API Used
+### Season Schedule
+Access the full race calendar for any season from 1950 to the present, including track names and race dates.
 
-This project uses the **Jolpica F1 API** (Ergast-compatible):
+### Global Search
+A filtering system that allows searching for specific drivers or constructors within the active view.
 
-Base URL:
+### Driver Profiles
+Interactive modal views that display background information and detailed race results for individual drivers.
 
-```
-https://api.jolpi.ca/ergast/f1/
-```
+### Historic Data
+Support for historical data spanning the entire history of Formula 1 (1950 onwards).
 
-Example:
+## Technical Overview
 
-```
-/2025/1/results.json
-```
+The application is built using a modular architecture:
+- Core logic handles API synchronization and state management.
+- UI modules manage specific views such as standings, schedules, and modals.
+- Responsive design tailored for high-performance data visualization.
 
-The API provides:
+## Setup and Usage
 
-* Race results
-* Driver details
-* Grid positions
-* Constructor information
-
----
-
-## Features(to be implemented)
-
-*  Search drivers or seasons
-*  View race-by-race results
-*  Performance trend analysis
-*  Position gain/loss (grid → finish)
-
----
-
-## How It Works
-
-1. Fetch race data using the Fetch API
-2. Extract relevant fields (position, grid, driver, etc.)
-3. Process data using JavaScript
-4. Generate insights using rule-based logic
-
----
-
-## Core Concepts Used
-
-* "fetch" for fetching data through API
-* "async" functions and promises
-* Array Higher-Order Functions
----
-
-## How to Run
-
-1. Clone the repository
-
-```
-git clone https://github.com/Prabhav1437/gridsense.git
-```
-
-2. Open the project folder
-
-3. Run `index.html` in your browser
-
----
-
-## Folder Structure
-
-- `src/` - Source code
-  - `api/` - API setup code
+1. Clone the repository.
+2. Open `index.html` in a web browser.
+3. Use the navigation sidebar to switch between views.
+4. Use the season selector in the header to view data from different years.
